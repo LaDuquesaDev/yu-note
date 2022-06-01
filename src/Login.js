@@ -1,16 +1,29 @@
 import React from 'react';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
-import { loginGoogle } from "./firebase/firebase.js";
+import { signInWithPopup, GoogleAuthProvider } from "./firebase/firebase.js";
+import auth from "./firebase/firebaseConfig.js"
 import './login.css'
 
-function Login() {
-  const navigate = useNavigate();
+const Login = () => {
+    const navigate = useNavigate();
+    const loginWithGoogle = () => {
+      const provider = new GoogleAuthProvider();
+      return signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        navigate('/Notes');
+      });
+    }
     return (
-        <button className="login__btn login__google" onClick={loginGoogle}>
+      <button className="login__btn login__google" onClick={loginWithGoogle}>
           Login with Google
-        </button>
-    );
+      </button>
+      );
 }
+    
 export default Login;
 
 
