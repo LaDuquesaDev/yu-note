@@ -15,12 +15,22 @@ const Login = () => {
         const token = credential.accessToken;
         const user = result.user;
         navigate('/Notes');
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
       });
     }
     return (
-      <button className="login__btn login__google" onClick={loginWithGoogle}>
+      <div>
+        <section className="titulo">
+        <h1>yuNOTE</h1>
+        </section>
+        <button className="login-btn login-google" onClick={loginWithGoogle}>
           Login with Google
-      </button>
+        </button>
+      </div>
       );
 }
     

@@ -1,11 +1,25 @@
-  .login__btn {
+  h1 {
+    font-family: 'Alfa Slab One', cursive;
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+  }
+
+  .titulo {
+    background-color: #ffcc00;
+    margin: 30%;
+    width: 12%;
+  }
+  
+  .login-btn {
+    display: flex;
     padding: 10px;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin: 40%;
     border: none;
-    color: white;
-    background-color: black;
+    color: rgb(0, 0, 0);
   }
-  .login__google {
-    background-color: #4285f4;
+
+  .login-google {
+    background-color: #ffcc00;
   }

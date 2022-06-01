@@ -14,9 +14,14 @@ const Logout = () => {
         });
     };
     return (
-        <button className="logout__btn" onClick={logoutBtn}>
+        <div>
+        <section className="welcome">
+        <h1>¡Welcome!</h1>
+        </section>
+        <button className="logout-btn" onClick={logoutBtn}>
           Logout
         </button>
+        </div>
     );
 }
     
