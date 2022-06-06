@@ -1,10 +1,12 @@
-  h1 {
+@media (min-width: 961px) {
+  .h1 {
+    text-align: center;
     font-family: 'Alfa Slab One', cursive;
     display: flex;
     align-items: center;
     font-size: 60px;
   }
-
+  
   .titulo {
     background-color: #ffcc00;
     margin: 30%;
@@ -19,7 +21,8 @@
     border: none;
     color: rgb(0, 0, 0);
   }
-
+  
   .login-google {
     background-color: #ffcc00;
   }
+}
