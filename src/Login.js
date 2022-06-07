@@ -1,7 +1,7 @@
 import React from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
-import { signInWithPopup, GoogleAuthProvider } from "./firebase/firebase.js";
+import { signInWithPopup, GoogleAuthProvider } from "./firebase/firebaseImport.js";
 import auth from "./firebase/firebaseConfig.js"
 import './login.css'
 

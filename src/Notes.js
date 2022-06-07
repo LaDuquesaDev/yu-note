@@ -1,11 +1,12 @@
 import React from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
-import { signOut } from "./firebase/firebase.js";
+import { signOut } from "./firebase/firebaseImport.js";
 import auth from "./firebase/firebaseConfig.js"
+import Example from './components/Modal.js'
 import './notes.css'
 
-const Logout = () => {
+export const Logout = () => {
     const navigate = useNavigate();
     const logoutBtn = () => {
         signOut(auth)
@@ -16,16 +17,19 @@ const Logout = () => {
         });
     };
     return (
-        <div>
+      <div>
         <section className="welcome">
         <button className="logout-btn" onClick={logoutBtn}>
           Logout
         </button>
         <h1>yuNOTES</h1>
-        <button>+</button>
         </section>
+        <div>
+        Example()
         </div>
+      </div>
     );
 }
-    
+
 export default Logout;
+
