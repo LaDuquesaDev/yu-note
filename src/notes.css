@@ -1,0 +1,17 @@
+
+.logout-btn {
+  display: flex;
+  padding: 10px;
+  font-size: 18px;
+  margin: 45%;
+  border: none;
+  color: rgb(0, 0, 0);
+  background-color: #ffcc00;
+}
+
+.welcome{
+  display: flex;
+  text-align: center;
+  font-size: 40px;
+  margin: 25%;
+}
