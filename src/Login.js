@@ -28,7 +28,7 @@ const Login = () => {
           <h1>Yu-Note</h1>
         </section>
         <section className='text'>
-          <p>La App perfecta para anotar lo que quieras</p>
+          <p>The perfect App to write down what you want</p>
         </section>
         <button className="login-btn login-google" onClick={loginWithGoogle}>
           Login with Google
