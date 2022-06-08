@@ -23,14 +23,17 @@ const Login = () => {
       });
     }
     return (
-      <div>
-        <section className="titulo">
-        <h1>yuNOTE</h1>
+      <>
+        <section className="title">
+          <h1>Yu-Note</h1>
+        </section>
+        <section className='text'>
+          <p>La App perfecta para anotar lo que quieras</p>
         </section>
         <button className="login-btn login-google" onClick={loginWithGoogle}>
           Login with Google
         </button>
-      </div>
+      </>
       );
 }
     

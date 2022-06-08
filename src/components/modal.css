@@ -1,0 +1,12 @@
+.addNote-btn {
+    display: flex;
+    margin-left: 80%;
+    margin-top: 90%;
+    font-size: 15px;
+    border-radius: 100%;
+}
+
+.modal-window {
+    display: flex;
+    margin-top: 35%;
+}

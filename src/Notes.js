@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { signOut } from "./firebase/firebaseImport.js";
 import auth from "./firebase/firebaseConfig.js"
-import Example from './components/Modal.js'
+import Example from './components/Modal.js';
 import './notes.css'
 
 export const Logout = () => {
@@ -17,16 +17,14 @@ export const Logout = () => {
         });
     };
     return (
-      <div>
-        <section className="welcome">
+      <div>        
         <button className="logout-btn" onClick={logoutBtn}>
           Logout
         </button>
-        <h1>yuNOTES</h1>
+        <section className="welcome">
+        <h1>Yu-Note</h1>
         </section>
-        <div>
-        Example()
-        </div>
+        <Example />
       </div>
     );
 }

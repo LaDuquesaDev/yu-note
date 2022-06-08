@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
+import '../components/modal.css'
 // import './notes.css'
 
 export default function Example({children}) {
@@ -13,21 +14,21 @@ export default function Example({children}) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
+        <Button className='addNote-btn' variant="primary" onClick={handleShow}>
+          +
         </Button>
         
-        <Modal show={show} onHide={handleClose}>
+        <Modal className='modal-window' show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Yu-Note</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
               <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
+                  type="text"
+                  placeholder="Receta crema de zanahorias"
                   autoFocus
                 />
               </Form.Group>
@@ -35,7 +36,7 @@ export default function Example({children}) {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
-                <Form.Label>Example textarea</Form.Label>
+                <Form.Label>Content</Form.Label>
                 <Form.Control as="textarea" rows={3} />
               </Form.Group>
             </Form>
