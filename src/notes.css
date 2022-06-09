@@ -9,7 +9,7 @@
   background-color: #ffcc00;
 }
 
-.welcome{
+.header{
   display: flex;
   justify-content: center;
   font-size: 40px;

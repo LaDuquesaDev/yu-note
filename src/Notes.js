@@ -21,8 +21,11 @@ export const Logout = () => {
         <button className="logout-btn" onClick={logoutBtn}>
           Logout
         </button>
-        <section className="welcome">
+        <section className="header">
         <h1>Yu-Note</h1>
+        </section>
+        <section className='container-notes'>
+        
         </section>
         <Example />
       </div>
