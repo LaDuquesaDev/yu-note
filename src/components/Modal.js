@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
+import { saveNotes } from '../firebase/firestore';
 import '../components/modal.css'
 // import './notes.css'
 
@@ -64,7 +65,7 @@ export default function Example({children}) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={() => {saveNotes(form.title, form.content)}}>
               Save Changes
             </Button>
           </Modal.Footer>
