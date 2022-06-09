@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { saveNotes } from '../firebase/firestore';
-import '../components/modal.css'
+import '../styles/modal.css'
 // import './notes.css'
 
 export default function Example({children}) {
@@ -13,6 +13,7 @@ export default function Example({children}) {
       title: '',
       content: ''
     });
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const updateField = e => setState({
