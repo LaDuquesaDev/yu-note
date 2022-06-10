@@ -26,7 +26,7 @@ export const getNoteList = async () => {
     return notes;
 }
 
-export const onSnapshotFunction = () => {
+export const paintNoteList = () => {
     const paint = query(collection(db, 'Notes'));
     return paint;
   };

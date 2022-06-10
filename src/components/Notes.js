@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
 import { signOut } from "../firebase/firebaseImport.js";
@@ -8,6 +8,8 @@ import Example from './Modal.js';
 import '../styles/notes.css'
 
 export const Logout = () => {
+    const [notes, setNotes] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     useEffect(() => {
       getNotes()
@@ -21,24 +23,38 @@ export const Logout = () => {
         });
     };
 
-    const getNotes = () => {
-      getNoteList().then(resp => {console.log(resp)}).catch(error => console.error(error))
+    const getNotes = async () => {
+      const notas = await getNoteList();
+      console.log(notas);
+      setNotes(notas);
+      setIsLoading(false)
+      console.log(notes);
     }
-    
-    return (
+    if (isLoading) {
+      return <div>Loading...</div>
+    } else {
+      return (
       <div>        
         <button className="logout-btn" onClick={logoutBtn}>
           Logout
         </button>
         <section className="header">
-        <h1>Yu-Note</h1>
+          <h1>Yu-Note</h1>
         </section>
         <section className='container-notes'>
-        
+          {notes.map((note) => {
+            return (
+              <div>
+                <p>{note.title}</p>
+                <p>{note.content}</p>
+              </div>
+            )
+          })}
         </section>
-        <Example />
+          <Example />
       </div>
     );
+    }
 }
 
 export default Logout;
