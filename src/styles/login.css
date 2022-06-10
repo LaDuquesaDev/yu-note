@@ -1,0 +1,39 @@
+@media (min-width: 760px) {
+  .root {
+    margin: 0%;
+    width: auto;
+    height: auto;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+  }
+
+  .title .h1 {
+    font-size: 40%;
+  }
+
+  .text{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10%;
+    font-size: 20px;
+  }
+  
+  .login-btn {
+    display: flex;
+    margin: 40%;
+    margin-top: 20%;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .login-google {
+    background-color: #ffcc00;
+  }
+}

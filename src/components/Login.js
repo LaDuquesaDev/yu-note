@@ -1,9 +1,9 @@
 import React from 'react';
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
+// import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
-import { signInWithPopup, GoogleAuthProvider } from "./firebase/firebase.js";
-import auth from "./firebase/firebaseConfig.js"
-import './login.css'
+import { signInWithPopup, GoogleAuthProvider } from "../firebase/firebaseImport";
+import auth from "../firebase/firebaseConfig.js"
+import '../styles/login.css'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -23,14 +23,17 @@ const Login = () => {
       });
     }
     return (
-      <div>
-        <section className="titulo">
-        <h1>yuNOTE</h1>
+      <>
+        <section className="title">
+          <h1>Yu-Note</h1>
+        </section>
+        <section className='text'>
+          <p>The perfect App to write down what you want</p>
         </section>
         <button className="login-btn login-google" onClick={loginWithGoogle}>
           Login with Google
         </button>
-      </div>
+      </>
       );
 }
     
