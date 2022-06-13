@@ -15,3 +15,8 @@
   font-size: 40px;
   margin-top: 5%;
 }
+
+.container-notes {
+  display: flex;
+  flex-direction: column;
+}

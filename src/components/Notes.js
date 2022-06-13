@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
 import { signOut } from "../firebase/firebaseImport.js";
-import { getNoteList } from '../firebase/firestore';
+import { getNotesList } from '../firebase/firestore';
 import auth from "../firebase/firebaseConfig.js"
-import Example from './Modal.js';
+import MyModal from './Modal.js';
 import '../styles/notes.css'
 
-export const Logout = () => {
+export const Notes = () => {
     const [notes, setNotes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
@@ -23,12 +23,15 @@ export const Logout = () => {
         });
     };
 
+    const addNote = (note) => {
+      //Actualizar estado note
+      setNotes([...notes, note])
+    } 
+
     const getNotes = async () => {
-      const notas = await getNoteList();
-      console.log(notas);
-      setNotes(notas);
+      const notesList = await getNotesList();
+      setNotes(notesList);
       setIsLoading(false)
-      console.log(notes);
     }
     if (isLoading) {
       return <div>Loading...</div>
@@ -51,11 +54,10 @@ export const Logout = () => {
             )
           })}
         </section>
-          <Example />
+          <MyModal parentCallback={addNote}/>
       </div>
     );
     }
 }
 
-export default Logout;
-
+export default Notes;

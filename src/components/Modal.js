@@ -7,7 +7,7 @@ import { saveNotes } from '../firebase/firestore';
 import '../styles/modal.css'
 // import './notes.css'
 
-export default function Example({children}) {
+export default function MyModal({parentCallback}) {
     const [show, setShow] = useState(false);
     const [form, setState] = useState({
       title: '',
@@ -20,11 +20,20 @@ export default function Example({children}) {
       ...form, //spread
       [e.target.name]: e.target.value
     });
+
     const printValues = e => {
       e.preventDefault();
       console.log(form.title, form.content);
     };
-    
+
+    const eventsSaveBtn = () => {
+      saveNotes(form.title, form.content).then((result) => {
+        console.log(result);
+      });
+      handleClose();
+      parentCallback({title:'delete' , content:'delete'}
+        );
+    };
   
     return (
       <>
@@ -44,7 +53,7 @@ export default function Example({children}) {
                   value={form.title}
                   type="text"
                   name="title"
-                  placeholder="Receta crema de zanahorias"
+                  placeholder="Ingrese el texto"
                   onChange={updateField}
                   autoFocus
                 />
@@ -66,12 +75,11 @@ export default function Example({children}) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={() => {saveNotes(form.title, form.content)}}>
+            <Button variant="primary" onClick={eventsSaveBtn}>
               Save Changes
             </Button>
           </Modal.Footer>
         </Modal>
-            {children}
       </>
     );
   };
