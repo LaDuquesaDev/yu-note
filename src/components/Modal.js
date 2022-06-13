@@ -31,8 +31,8 @@ export default function MyModal({parentCallback}) {
         console.log(result);
       });
       handleClose();
-      parentCallback({title:'delete' , content:'delete'}
-        );
+      // parentCallback({title:'delete' , content:'delete'}
+        // );
     };
   
     return (
