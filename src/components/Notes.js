@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { useNavigate } from "react-router-dom";
 import { signOut } from "../firebase/firebaseImport.js";
-import { getNotesList, onGetNote } from '../firebase/firestore';
-import auth, { dbquery } from "../firebase/firebaseConfig.js"
+import { getNotesList } from '../firebase/firestore';
+import auth from "../firebase/firebaseConfig.js"
 import MyModal from './Modal.js';
 import '../styles/notes.css'
-import { QuerySnapshot } from 'firebase/firestore';
 
 export const Notes = () => {
     const [notes, setNotes] = useState([]);
@@ -15,10 +14,6 @@ export const Notes = () => {
     useEffect(() => {
       getNotes()
     }, []) 
-
-    useEffect(() => {
-      getNotesQuery()
-    }, [])
 
     const logoutBtn = () => {
         signOut(auth)
@@ -29,25 +24,10 @@ export const Notes = () => {
         });
     };
 
-    const addNote = (note) => {
-      //Actualizar estado note
-      setNotes([...notes, note])
-    } 
-
-    const getNotesQuery = async () => {
-      dbquery.collection('Notes').onSnapshot((querySnapshot) => {
-        querySnapshot.forEach(note => {
-          console.log(note);
-        })
-      })
-    }
-
-    // onGetNote((response) => {
-    //   let infoNoteUser = "";
-    //   let noteWall = [];
-    //   response.forEach((text) => {
-    //     const dataNote = text.data();
-    //     noteWall.push({ textAreaPost: datapost.textAreaPost });
+    // const addNote = (note) => {
+    //   //Actualizar estado note
+    //   setNotes([...notes, note])
+    // } 
 
     const getNotes = async () => {
       const notesList = await getNotesList();
@@ -68,14 +48,14 @@ export const Notes = () => {
         <section className='container-notes'>
           {notes.map((note) => {
             return (
-              <div>
+            <div key={note.title} className='container-note'>
                 <p>{note.title}</p>
                 <p>{note.content}</p>
-              </div>
+            </div>
             )
           })}
         </section>
-          <MyModal parentCallback={addNote}/>
+          <MyModal getNotes={getNotes}/>
       </div>
     );
     }

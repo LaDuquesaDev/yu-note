@@ -16,7 +16,9 @@
   margin-top: 5%;
 }
 
-.container-notes {
+.container-note {
   display: flex;
   flex-direction: column;
+  background-color: #ffe88c;
+  margin: 20px;
 }

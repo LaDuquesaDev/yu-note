@@ -4,7 +4,7 @@ import {
     addDoc, 
     getDocs,
     query,
-    onSnapshot,
+    // onSnapshot,
     // deleteDoc,
     // doc,
     // getDoc,
@@ -32,5 +32,3 @@ export const paintNotesList = () => {
     const paint = query(collection(db, 'Notes'));
     return paint;
 };
-
-export const onGetNote = (callback) => onSnapshot(collection(db, "Notes"), (callback));

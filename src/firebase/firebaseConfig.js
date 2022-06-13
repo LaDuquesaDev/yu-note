@@ -17,7 +17,7 @@ export const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const dbquery = app.firestore();
+// export const dbquery = firestore(app);
 const auth =  getAuth(app);
 
 export default auth;
