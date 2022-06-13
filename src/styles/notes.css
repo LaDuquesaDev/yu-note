@@ -15,3 +15,10 @@
   font-size: 40px;
   margin-top: 5%;
 }
+
+.container-note {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffe88c;
+  margin: 20px;
+}
