@@ -35,7 +35,7 @@ export default function MyModal({getNotes}) {
   
     return (
       <>
-        <Button className='addNote-btn' variant="primary" onClick={handleShow}>
+        <Button className='modal-btn' variant="primary" onClick={handleShow}>
           +
         </Button>
         
