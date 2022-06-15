@@ -1,32 +1,16 @@
 import React, { useEffect, useState } from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
-import { useNavigate } from "react-router-dom";
-import { signOut } from "../firebase/firebaseImport.js";
 import { getNotesList } from '../firebase/firestore';
-import auth from "../firebase/firebaseConfig.js"
+import Logout from './Logout.js'
 import MyModal from './Modal.js';
 import '../styles/notes.css'
 
 export const Notes = () => {
     const [notes, setNotes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const navigate = useNavigate();
     useEffect(() => {
       getNotes()
     }, []) 
-    const logoutBtn = () => {
-        signOut(auth)
-        .then((result) => {
-          if (window.confirm("¿Estás seguro de cerrar sesión?")) {
-            navigate('/');
-          }
-        });
-    };
-
-    const addNote = (note) => {
-      //Actualizar estado note
-      setNotes([...notes, note])
-    } 
 
     const getNotes = async () => {
       const notesList = await getNotesList();
@@ -38,26 +22,30 @@ export const Notes = () => {
     } else {
       return (
       <div>        
-        <button className="logout-btn" onClick={logoutBtn}>
-          Logout
-        </button>
+          <Logout />
         <section className="header">
           <h1>Yu-Note</h1>
         </section>
         <section className='container-notes'>
           {notes.map((note) => {
             return (
-              <div>
-                <p>{note.title}</p>
+            <div key={note.title} className='container-note'>
+                <b><p>{note.title}</p></b>
                 <p>{note.content}</p>
-              </div>
+            </div>
             )
           })}
         </section>
-          <MyModal parentCallback={addNote}/>
+          <MyModal getNotes={getNotes}/>
       </div>
     );
     }
 }
 
 export default Notes;
+
+
+    // const addNote = (note) => {
+    //   //Actualizar estado note
+    //   setNotes([...notes, note])
+    // } 
