@@ -3,7 +3,7 @@ import {
     collection, 
     addDoc, 
     getDocs,
-    query,
+    // query,
     // onSnapshot,
     // deleteDoc,
     // doc,
@@ -26,9 +26,4 @@ export const getNotesList = async () => {
         notes.push(doc.data())
     })
     return notes;
-};
-
-export const paintNotesList = () => {
-    const paint = query(collection(db, 'Notes'));
-    return paint;
 };
