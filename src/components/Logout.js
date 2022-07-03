@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { signOut } from "../firebase/firebaseImport";
 import auth from "../firebase/firebaseConfig.js"
-import '../styles/logout.css'
 import { Button } from 'react-bootstrap';
+import '../styles/notes.css'
 
 const Logout = () => {
 const navigate = useNavigate();
@@ -19,7 +19,7 @@ const handleShow = () => {
     }; 
     return (       
         <div>
-            <Button className="logout-btn" onClick={handleShow}>
+            <Button className="logout-btn" variant="warning" onClick={handleShow}>
                 Logout
             </Button>
         </div>

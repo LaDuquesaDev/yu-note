@@ -1,33 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { saveNotes } from '../firebase/firestore';
-import '../styles/modal.css'
+import '../styles/notes.css'
 // import './notes.css'
 
-export default function MyModal({getNotes}) {
+export default function MyModal({getNotes, showInitialModal, setShowInitialModal, selectedNote}) {
     const [show, setShow] = useState(false);
     const [form, setState] = useState({
       title: '',
       content: ''
     });
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+      setShow(false)
+      setShowInitialModal(false)
+    };
     const handleShow = () => setShow(true);
     const updateField = e => setState({
       ...form, //spread
       [e.target.name]: e.target.value
     });
+    useEffect(() => {
+        setShow(showInitialModal)
+        if (selectedNote) {
+          setState(currentForm => {
+            currentForm.title = selectedNote.title;
+            currentForm.content = selectedNote.content;
+            return currentForm
+          })
+        }
+    }, [showInitialModal]) 
 
     const printValues = e => {
       e.preventDefault();
-      console.log(form.title, form.content);
     };
 
     const eventsSaveBtn = () => {
-      saveNotes(form.title, form.content).then((result) => {
-        console.log(result);
+      saveNotes(form.title, form.content).then(() => {
         getNotes()
         handleClose();
       });
@@ -35,7 +46,7 @@ export default function MyModal({getNotes}) {
   
     return (
       <>
-        <Button className='modal-btn' variant="primary" onClick={handleShow}>
+        <Button className='modal-btn' variant="warning" onClick={handleShow}>
           +
         </Button>
         
@@ -72,7 +83,7 @@ export default function MyModal({getNotes}) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={eventsSaveBtn}>
+            <Button variant="warning" onClick={eventsSaveBtn}>
               Save Changes
             </Button>
           </Modal.Footer>

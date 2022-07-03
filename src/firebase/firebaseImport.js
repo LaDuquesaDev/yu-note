@@ -1,11 +1,12 @@
-// import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
+import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 
 export {
   getFirestore, 
   GoogleAuthProvider, 
-  signInWithPopup, 
+  signInWithPopup,
+  initializeApp,
   getAuth, 
   signOut
 };

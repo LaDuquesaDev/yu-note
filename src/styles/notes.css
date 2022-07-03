@@ -1,14 +1,85 @@
-.header{
-  display: flex;
-  justify-content: center;
+@media (min-width: 760px) {
+* {
+    margin: 0;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 20% 60% 10%;
+}
+
+.header h1 {
+  grid-column: 2/3;
+  grid-row: 2/3;
   font-size: 40px;
-  margin-top: 5%;
 }
 
 .container-note {
-  display: flex;
-  flex-direction: column;
+  grid-column: 2/3;
+  grid-row: 2/3;
   background-color: #fff0b2;
-  margin: 20px;
   padding: 1em;
+}
+
+/* Login */
+
+.title {
+  grid-column: 2/3;
+  margin-top: 30%;
+}
+
+.title .h1 {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 40%;
+}
+
+.text{
+  width: 100%;
+  margin-top: 10%;
+  font-size: 20px;
+}
+
+.login-btn {
+  margin: 40%;
+  margin-top: 20%;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+.login-google {
+  background-color: #ffcc00;
+}
+
+/* Modal  */
+
+.modal-btn {
+  display: flex;
+  margin-left: 80%;
+  margin-top: 10%;
+  font-size: 20px;
+  border-radius: 100%;
+}
+
+.modal-window {
+  display: flex;
+  margin-top: 35%;
+}
+
+/* Logout */
+
+.logout-btn {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  margin-left: 80%;
+  margin-top: 2em;
+  padding: 5px;
+  font-size: 15px;
+  border: none;
+}
+
 }

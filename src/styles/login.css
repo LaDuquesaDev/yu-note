@@ -1,12 +1,7 @@
-@media (min-width: 760px) {
-  .root {
-    margin: 0%;
-    width: auto;
-    height: auto;
-  }
+/* @media (min-width: 760px) {
   
-  .title {
-    display: flex;
+  /* .title {
+    grid-column: 2/3;
     justify-content: center;
     margin-top: 30%;
   }
@@ -35,5 +30,5 @@
   
   .login-google {
     background-color: #ffcc00;
-  }
-}
+  } */
+

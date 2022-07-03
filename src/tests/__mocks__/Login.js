@@ -1,1 +1,0 @@
-export const signInWithPopup = jest.fn(() => Promise.resolve({}));
