@@ -23,7 +23,7 @@ const Login = () => {
         <section className='text'>
           <p>The perfect App to write down what you want</p>
         </section>
-        <button className="login-btn login-google" onClick={loginWithGoogle}>
+        <button className="login-btn login-google" variant="warning" onClick={loginWithGoogle}>
           Login with Google
         </button>
       </>

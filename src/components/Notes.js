@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { getNotesList, deleteNote } from '../firebase/firestore.js';
+import { BsTrash } from "react-icons/bs";
+import { BsPencil } from "react-icons/bs";
 import Logout from './Logout.js';
 import MyModal from './Modal.js';
 import '../styles/notes.css'
@@ -49,10 +51,10 @@ export const Notes = () => {
             console.log('NOTA', note);
             return (
             <div key={note.id} className='container-note'>
-                <b><p>{note.title}</p></b>
-                <p>{note.content}</p>
-                <button onClick={() => handleDelete(note.id)}>Delete</button>
-                <button onClick={() => handleEdit(note)}>Edit</button>
+                <b className='title'><p>{note.title}</p></b>
+                <textarea readOnly className='content'>{note.content}</textarea>
+                <BsTrash className="bi bi-trash" variant='primary' onClick={() => handleDelete(note.id)}></BsTrash>
+                <BsPencil className="bi bi-pencil" variant='primary' onClick={() => handleEdit(note)}></BsPencil>
             </div>
             )
           })}

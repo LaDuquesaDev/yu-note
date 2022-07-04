@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { saveNotes } from '../firebase/firestore';
-import '../styles/notes.css'
+import '../styles/modal.css'
 // import './notes.css'
 
 export default function MyModal({getNotes, showInitialModal, setShowInitialModal, selectedNote}) {
