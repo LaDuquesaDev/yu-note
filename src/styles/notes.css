@@ -6,9 +6,31 @@
 }
 
 .container-note {
-  display: flex;
+  display: grid;
+  grid-template-columns: 90% 10%;
   flex-direction: column;
   background-color: #fff0b2;
   margin: 20px;
   padding: 1em;
+}
+
+.title {
+  grid-column: 1/2;
+  margin: 0;
+  justify-content: flex-start;
+}
+
+.title p {
+  margin: 0;
+}
+
+.content {
+  grid-row: 2/3;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.bi {
+  margin-left: 80%;
 }
