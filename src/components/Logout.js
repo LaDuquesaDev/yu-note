@@ -19,7 +19,7 @@ const handleShow = () => {
     }; 
     return (       
         <div>
-            <Button type="button" className="btn btn-warning btn-sm" onClick={handleShow}>
+            <Button type="button" className="btn-logout btn-warning btn-sm" onClick={handleShow}>
                 Logout
             </Button>
         </div>
