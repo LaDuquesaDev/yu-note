@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { saveNotes } from '../firebase/firestore';
+import { BsFillPlusCircleFill } from "react-icons/bs";
 import '../styles/modal.css'
 // import './notes.css'
 
@@ -46,9 +47,7 @@ export default function MyModal({getNotes, showInitialModal, setShowInitialModal
   
     return (
       <>
-        <Button className='modal-btn' variant="warning" onClick={handleShow}>
-          +
-        </Button>
+        <BsFillPlusCircleFill className='modal-btn' variant="warning" size="sm" onClick={handleShow}></BsFillPlusCircleFill>
         
         <Modal className='modal-window' show={show} onHide={handleClose}>
           <Modal.Header closeButton>
