@@ -1,4 +1,12 @@
 @media (min-width: 760px) {
+  .all-container {
+    height: 100%;
+    margin: 0;
+    background-image: url('/img/background.svg');
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  
   .header{
     display: flex;
     justify-content: center;
@@ -36,4 +44,17 @@
   .bi {
     margin-left: 80%;
   }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .all-container {
+    height: 100%;
+    margin: 0;
+    background-image: url('/img/background-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 }

@@ -12,6 +12,8 @@ export const Notes = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [selectedNote, setSelectedNote] = useState("");
     const [showInitialModal, setShowInitialModal] = useState(false);
+    const [mode, setMode] = useState("");
+    
     useEffect(() => {
       getNotes()
     }, []) 
@@ -27,7 +29,8 @@ export const Notes = () => {
     });
     }
 
-    const handleEdit = async (note) => {
+    const handleEdit = (note) => {
+      setMode('Edit')
       setShowInitialModal(true)
       setSelectedNote(note)
     }
@@ -41,7 +44,7 @@ export const Notes = () => {
       return <div>Loading...</div>
     } else {
       return (
-      <div>        
+      <div className='all-container'>        
           <Logout />
         <section className="header">
           <h1>Yu-Note</h1>
@@ -59,7 +62,7 @@ export const Notes = () => {
             )
           })}
         </section>
-          <MyModal getNotes={getNotes} showInitialModal={showInitialModal} setShowInitialModal={setShowInitialModal} selectedNote={selectedNote}/>
+          <MyModal getNotes={getNotes} showInitialModal={showInitialModal} setShowInitialModal={setShowInitialModal} selectedNote={selectedNote} mode={mode} setMode={setMode}/>
       </div>
     );
     }

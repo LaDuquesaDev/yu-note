@@ -7,8 +7,8 @@ import {
     // onSnapshot,
     deleteDoc,
     doc,
-    getDoc
-    // updateDoc
+    getDoc,
+    updateDoc
 } from "firebase/firestore";
 
 export const saveNotes = async (title, content) => {
@@ -33,6 +33,15 @@ export const deleteNote = async (id) => {
     await deleteDoc(doc(db, 'Notes', id))
 };
 
-export const getOnePost = async(id) => {
-    await getDoc(doc(db, "posts-collection", id))
+export const getOneNote = async(id) => {
+    await getDoc(doc(db, "Notes", id))
+};
+
+export const updateNote = async(id, newChanges) => {
+    const noteEdit = []
+    const noteChanged = await updateDoc(doc(db, "Notes", id), newChanges)
+    noteChanged.forEach(doc => {
+        noteEdit.push({title: doc.data(), content: doc.data()});
+    })
+    return noteEdit;
 };
