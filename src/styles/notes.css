@@ -26,9 +26,10 @@
 .container-note {
   display: grid;
   grid-template-columns: 90% 10%;
-  grid-template-rows: 40% 50%;
+  grid-template-rows: 40% 60%;
   flex-direction: column;
   align-content: center;
+  height: 30%;
   margin: 15px;
   padding: 20px;
   background-color: #fbf6e1;
@@ -38,7 +39,7 @@
   grid-column: 1/2;
   margin: 0;
   justify-content: flex-start;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .content {
@@ -46,7 +47,7 @@
   margin: 0;
   background-color: transparent; 
   border: none;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .bi {
