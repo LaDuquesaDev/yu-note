@@ -21,7 +21,7 @@ export const Notes = () => {
     const handleDelete = (id) => {
       deleteNote(id)
       .then(() => {
-        if (window.confirm("Are you sure to delete this comment?")) {
+        if (window.confirm("Are you sure to delete this note?")) {
           getNotes();
         }
     }).catch((error) => {

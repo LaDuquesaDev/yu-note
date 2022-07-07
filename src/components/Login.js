@@ -20,7 +20,7 @@ const Login = () => {
       <div className='login-container'>
         <section className='login-section'>
           <h1 className='yu-note'>Yu-Note</h1>
-          <p className='perfect-app'>The perfect App to write down what you want</p>
+          <p className='perfect-app'>The perfect app to write down what you want</p>
           <section>
             <button className="login-btn login-google" variant="warning" onClick={loginWithGoogle}>
               Login with Google
