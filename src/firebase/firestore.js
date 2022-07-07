@@ -37,11 +37,10 @@ export const getOneNote = async(id) => {
     await getDoc(doc(db, "Notes", id))
 };
 
-export const updateNote = async(id, newChanges) => {
-    const noteEdit = []
-    const noteChanged = await updateDoc(doc(db, "Notes", id), newChanges)
-    noteChanged.forEach(doc => {
-        noteEdit.push({title: doc.data(), content: doc.data()});
-    })
-    return noteEdit;
+// export const updateNote = async (id, title, description) => {
+//     await updateDoc(doc(db, "notes", id), { title, description });
+//   };
+
+export const updateNote = (id, newChanges) => {
+    return updateDoc(doc(db, "Notes", id), newChanges);
 };

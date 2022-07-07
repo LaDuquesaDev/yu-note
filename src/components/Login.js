@@ -15,19 +15,21 @@ const Login = () => {
         console.error(error)
       });
     }
-    return (
-      <>
-        <section className="title">
-          <h1>Yu-Note</h1>
+  return (
+    <>
+      <div className='login-container'>
+        <section className='login-section'>
+          <h1 className='yu-note'>Yu-Note</h1>
+          <p className='perfect-app'>The perfect App to write down what you want</p>
+          <section>
+            <button className="login-btn login-google" variant="warning" onClick={loginWithGoogle}>
+              Login with Google
+            </button>
+          </section>
         </section>
-        <section className='text'>
-          <p>The perfect App to write down what you want</p>
-        </section>
-        <button className="login-btn login-google" variant="warning" onClick={loginWithGoogle}>
-          Login with Google
-        </button>
-      </>
-      );
+      </div>
+    </>
+  );
 }
     
 export default Login;

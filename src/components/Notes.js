@@ -44,11 +44,9 @@ export const Notes = () => {
       return <div>Loading...</div>
     } else {
       return (
-      <div className='all-container'>        
+      <div className="ppal-container">        
           <Logout />
-        <section className="header">
-          <h1>Yu-Note</h1>
-        </section>
+          <h1 className='yunote-notes'>Notes</h1>
         <section className='container-notes'>
           {notes.map((note) => {
             console.log('NOTA', note);

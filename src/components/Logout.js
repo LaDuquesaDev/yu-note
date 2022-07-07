@@ -18,7 +18,7 @@ const handleShow = () => {
     });
     }; 
     return (       
-        <div>
+        <div className='logout-container'>
             <Button type="button" className="btn-logout btn-warning btn-sm" onClick={handleShow}>
                 Logout
             </Button>

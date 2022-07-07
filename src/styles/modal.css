@@ -1,14 +1,16 @@
 .modal-btn {
-    display: flex;
-    margin-left: 80%;
-    margin-top: 10%;
-    font-size: 15px;
-    border-radius: 100%;
     width: 10%;
-    height: 10%;
+    height: auto;
+    margin-top: 10%;
+    margin-left: 80%;
+    margin-bottom: 20%;
+    border-radius: 100%;
 }
 
 .modal-window {
-    display: flex;
-    margin-top: 35%;
+    margin-top: 30%;
+}
+
+.modal-container {
+    margin-top: 0%;
 }

@@ -47,7 +47,13 @@ export default function MyModal({ getNotes, showInitialModal, setShowInitialModa
 
   const eventsSaveBtn = () => {
     if (mode === 'Edit') {
-      updateNote()
+      updateNote(selectedNote.id, {
+        title: form.title,
+        content: form.content
+      }).then(() => {
+        getNotes()
+        handleClose();
+      });
       } else if (mode === 'Create') {
       saveNotes(form.title, form.content).then(() => {
         getNotes()
@@ -58,7 +64,8 @@ export default function MyModal({ getNotes, showInitialModal, setShowInitialModa
 
   return (
     <>
-      <BsFillPlusCircleFill className='modal-btn' variant="warning" size="sm" onClick={handleShow}></BsFillPlusCircleFill>
+      <div className='modal-container'>
+      <BsFillPlusCircleFill className='modal-btn' size="sm" onClick={handleShow}></BsFillPlusCircleFill>
 
       <Modal className='modal-window' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -98,6 +105,7 @@ export default function MyModal({ getNotes, showInitialModal, setShowInitialModa
           </Button>
         </Modal.Footer>
       </Modal>
+      </div>
     </>
   );
 };
