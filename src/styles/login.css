@@ -22,6 +22,7 @@
     text-align: center;
     margin-top: 50%;
     margin-bottom: 10%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
   .perfect-app {
@@ -29,6 +30,7 @@
     text-align: center;
     margin-top: 0%;
     font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.523);
   }
 
   .login-btn {
@@ -38,7 +40,7 @@
     margin-top: 20%;
     margin-bottom: 50%;
     padding: 10px;
-    font-size: 60%;
+    font-size: 70%;
     border: none;
     border-radius: 6px;
     color: black;
@@ -70,7 +72,7 @@
     text-align: center;
     margin-top: 60%;
     margin-bottom: 10%;
-    font-size: 35px;
+    font-size: 40px;
   }
 
   .perfect-app {

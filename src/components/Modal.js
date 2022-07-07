@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { saveNotes, updateNote } from '../firebase/firestore';
 import { BsFillPlusCircleFill } from "react-icons/bs";
-import '../styles/modal.css'
+import '../styles/modal.css';
 // import './notes.css'
 
 export default function MyModal({ getNotes, showInitialModal, setShowInitialModal, selectedNote, mode, setMode }) {
@@ -48,9 +48,7 @@ export default function MyModal({ getNotes, showInitialModal, setShowInitialModa
   const eventsSaveBtn = () => {
     if (mode === 'Edit') {
       updateNote(selectedNote.id, {
-        title: form.title,
-        content: form.content
-      }).then(() => {
+        content: form.content, title: form.title}).then(() => {
         getNotes()
         handleClose();
       });

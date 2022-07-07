@@ -7,13 +7,15 @@
   
   .btn-logout {
     display: flex;
+    width: 10%;
     height: 25%;
-    align-items: center;
+    /* align-items: center; */
     margin-top: 3%;
-    padding: 10px;
+    margin-right: 3%;
+    color: rgba(247, 231, 0, 0.868);;
+    /* padding: 10px;
     border: none;
     border-radius: 6px;
-    color: black;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    background-color: rgba(247, 231, 0, 0.868);
+    background-color: rgba(247, 231, 0, 0.868); */
   }

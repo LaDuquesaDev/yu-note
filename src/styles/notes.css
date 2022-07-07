@@ -16,6 +16,7 @@
   margin-bottom: 10%;
   text-align: center;
   align-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container-notes {
@@ -25,21 +26,21 @@
 
 .container-note {
   display: grid;
-  grid-template-columns: 90% 10%;
-  grid-template-rows: 40% 60%;
+  grid-template-columns: 87% 10%;
+  grid-template-rows: 40% 50%;
   flex-direction: column;
   align-content: center;
   height: 30%;
   margin: 15px;
-  padding: 20px;
-  background-color: #fbf6e1;
+  padding: 15px;
+  background-color: #fbf6e1d0;
 }
 
 .title {
   grid-column: 1/2;
   margin: 0;
   justify-content: flex-start;
-  font-size: 1em;
+  font-size: 0.7em;
 }
 
 .content {
