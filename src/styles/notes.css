@@ -27,7 +27,7 @@
 .container-note {
   display: grid;
   grid-template-columns: 87% 10%;
-  grid-template-rows: 40% 50%;
+  grid-template-rows: 50% 50%;
   flex-direction: column;
   align-content: center;
   height: 30%;

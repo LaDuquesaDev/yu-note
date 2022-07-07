@@ -7,12 +7,12 @@
   
   .btn-logout {
     display: flex;
-    width: 10%;
-    height: 25%;
+    width: 15%;
+    height: 15%;
     /* align-items: center; */
-    margin-top: 3%;
-    margin-right: 3%;
-    color: rgba(247, 231, 0, 0.868);;
+    margin-top: 10%;
+    margin-right: 10%;
+    color: rgba(0, 0, 0, 0.868);;
     /* padding: 10px;
     border: none;
     border-radius: 6px;
