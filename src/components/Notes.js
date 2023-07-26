@@ -67,9 +67,3 @@ export const Notes = () => {
 }
 
 export default Notes;
-
-
-    // const addNote = (note) => {
-    //   //Actualizar estado note
-    //   setNotes([...notes, note])
-    // } 

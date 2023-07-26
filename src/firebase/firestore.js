@@ -23,7 +23,7 @@ export const getNotesList = async () => {
     const querySnapshot = await getDocs(collection(db, 'Notes'));
     querySnapshot.forEach(doc => {
         // console.log('DOCDATAID', {...doc.data(), id: doc.id});
-        notes.push({content: doc.data().content, title: doc.data().title, id: doc.id});
+        notes.push({title: doc.data().title, content: doc.data().content, id: doc.id});
     })
     return notes;
 };

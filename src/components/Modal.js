@@ -48,7 +48,7 @@ export default function MyModal({ getNotes, showInitialModal, setShowInitialModa
   const eventsSaveBtn = () => {
     if (mode === 'Edit') {
       updateNote(selectedNote.id, {
-        content: form.content, title: form.title}).then(() => {
+        title: form.title, content: form.content}).then(() => {
         getNotes()
         handleClose();
       });
